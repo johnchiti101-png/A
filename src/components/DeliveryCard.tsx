@@ -52,7 +52,6 @@ export function DeliveryCard({
           <h3 className="font-bold text-gray-900 text-base mb-1">{mode.label}</h3>
           <div className="flex items-center gap-2 text-sm text-gray-600">
             <span>{mode.time}</span>
-            <span>🍔{totalItemCount}</span>
           </div>
           <p className="text-xs text-gray-500 mt-1">{mode.description}</p>
         </div>

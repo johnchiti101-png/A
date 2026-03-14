@@ -420,7 +420,7 @@ export function FoodDelivery() {
             transition={{ delay: 0.2 }}
           >
             <div className="flex justify-between text-sm">
-              <span className="text-gray-600">Food subtotal</span>
+              <span className="text-gray-600">Item subtotal</span>
               <span className="font-medium text-gray-900">R {foodSubtotal}</span>
             </div>
             <div className="flex justify-between text-sm">
