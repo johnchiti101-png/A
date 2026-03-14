@@ -262,8 +262,8 @@ export function FoodiesRoute() {
 
   const getStopButtonText = (stopId: string): string => {
     const count = getFoodCountForStop(stopId);
-    if (count === 0) return 'Add food';
-    return `Food added (${count})`;
+    if (count === 0) return 'Add item';
+    return count === 1 ? `${count} item added` : `${count} items added`;
   };
 
   const isFoodDisabled = (foodId: string, stopId: string): boolean => {
@@ -367,7 +367,7 @@ export function FoodiesRoute() {
                   whileTap={{ scale: cart.length > 0 ? 0.95 : 1 }}
                 >
                    
-                  <span className="text-[10px] font-medium text-gray-700">View your item</span>
+                  <span className="text-[10px] font-medium text-gray-700">View your {unselectedFoods.length === 1 ? 'item' : 'items'}</span>
                   {unselectedFoods.length > 0 && (
                     <motion.span
                       initial={{ scale: 0 }}
@@ -547,7 +547,7 @@ export function FoodiesRoute() {
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             >
               <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between rounded-t-3xl">
-                <h2 className="text-xl font-bold text-gray-900">Your Food ({unselectedFoods.length})</h2>
+                <h2 className="text-xl font-bold text-gray-900">Your {unselectedFoods.length === 1 ? 'Item' : 'Items'} ({unselectedFoods.length})</h2>
                 <motion.button
                   onClick={() => setShowCurrentLocationModal(false)}
                   className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
@@ -619,7 +619,7 @@ export function FoodiesRoute() {
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             >
               <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between rounded-t-3xl">
-                <h2 className="text-xl font-bold text-gray-900">Select Food for Stop</h2>
+                <h2 className="text-xl font-bold text-gray-900">Select Items for Stop</h2>
                 <motion.button
                   onClick={() => setShowStopModal(null)}
                   className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
